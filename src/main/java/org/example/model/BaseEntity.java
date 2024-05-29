@@ -6,6 +6,7 @@ public class BaseEntity {
     public BaseEntity(Long id) {
         this.id = id;
     }
+    public BaseEntity() {}
 
     public Long getId() {
         return id;

@@ -7,8 +7,8 @@ public abstract class User extends BaseEntity {
     protected String email;
     protected String token;
 
-    public User(Long id, String name, String userName, String password, String email) {
-        super(id);
+    public User( String name, String userName, String password, String email) {
+
         this.name = name;
         UserName = userName;
         this.password = password;

@@ -50,4 +50,21 @@ public class JobSeekerRepositoryImp implements JobSeekerRepository {
     public List<JobSeeker> getJobSeekers() {
         return jobSeekers;
     }
+
+    @Override
+    public boolean deleteById(Long id) {
+        Optional res =findById(id);
+        return res.isPresent();
+
+    }
+
+    @Override
+    public Optional findById(Long id) {
+        for (JobSeeker jobSeeker : jobSeekers) {
+            if (jobSeeker.getId().equals(id)) {
+                return Optional.of(jobSeeker);
+            }
+        }
+        return Optional.empty();
+    }
 }

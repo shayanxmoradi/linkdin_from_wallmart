@@ -12,8 +12,14 @@ public class Main {
         JobSeeker jobSeeker = new JobSeeker("shayan","moradi","1234","shayan@gmail.com");
         jobSeekerAuthServiceImp.register(jobSeeker);
         JobSeeker jobSeeker1 = jobSeekerRepositoryImp.getJobSeekers().get(0);
+        System.out.println(  jobSeekerRepositoryImp.getJobSeekers());
 //        System.out.println(jobSeekerRepositoryImp.getJobSeekers().get(0));
         System.out.println(jobSeeker1.getName());
+        System.out.println("res"+jobSeekerRepositoryImp.findById(1L));
+       // jobSeekerRepositoryImp.getJobSeekers().remove(jobSeeker1);
+      //  System.out.println(  jobSeekerRepositoryImp.getJobSeekers());
+
+
 
     }
 }

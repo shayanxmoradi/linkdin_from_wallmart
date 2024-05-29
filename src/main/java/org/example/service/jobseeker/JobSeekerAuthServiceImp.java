@@ -1,9 +1,13 @@
 package org.example.service.jobseeker;
 
+import org.example.model.BaseEntity;
 import org.example.model.JobSeeker;
+import org.example.repository.baseEntity.BaseEntityRepositoryImp;
 import org.example.repository.jobseeker.JobSeekerRepository;
 
-public class JobSeekerAuthServiceImp implements JobSeekerAuthService {
+import java.util.Optional;
+
+public class JobSeekerAuthServiceImp  implements JobSeekerAuthService {
     private final JobSeekerRepository repository;
 
     public JobSeekerAuthServiceImp(JobSeekerRepository repository) {
@@ -37,5 +41,19 @@ public class JobSeekerAuthServiceImp implements JobSeekerAuthService {
 
     public JobSeekerRepository getRepository() {
         return repository;
+    }
+
+
+    @Override
+    public boolean deleteById(Long id) {
+        return repository.deleteById(id);
+    }
+
+
+
+    @Override
+    public Optional findById(Long id) {
+        return repository.findById(id);
+
     }
 }

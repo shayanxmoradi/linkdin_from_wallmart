@@ -1,7 +1,7 @@
 package org.example.model;
 
-public class Job {
-    private int id;
+public class Job extends BaseEntity {
+
     private String name;
     private String description;
     private String location;
@@ -10,8 +10,8 @@ public class Job {
     private Employer publisherEmployer;
     private double proposedSalary;
 
-    public Job(int id, String name, String description, String location, String type, String status, Employer publisherEmployer, double proposedSalary) {
-        this.id = id;
+    public Job( String name, String description, String location, String type, String status, Employer publisherEmployer, double proposedSalary) {
+
         this.name = name;
         this.description = description;
         this.location = location;
