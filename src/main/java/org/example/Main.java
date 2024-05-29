@@ -7,17 +7,28 @@ import org.example.service.jobseeker.JobSeekerAuthServiceImp;
 
 public class Main {
     public static void main(String[] args) {
-        JobSeekerRepositoryImp jobSeekerRepositoryImp = new JobSeekerRepositoryImp();
-        JobSeekerAuthServiceImp jobSeekerAuthServiceImp = new JobSeekerAuthServiceImp(jobSeekerRepositoryImp);
-        JobSeeker jobSeeker = new JobSeeker("shayan","moradi","1234","shayan@gmail.com");
-        jobSeekerAuthServiceImp.register(jobSeeker);
-        JobSeeker jobSeeker1 = jobSeekerRepositoryImp.getJobSeekers().get(0);
-        System.out.println(  jobSeekerRepositoryImp.getJobSeekers());
+        //job seeker block
+        {
+
+            JobSeekerRepositoryImp jobSeekerRepositoryImp = new JobSeekerRepositoryImp();
+            JobSeekerAuthServiceImp jobSeekerAuthServiceImp = new JobSeekerAuthServiceImp(jobSeekerRepositoryImp);
+            JobSeeker jobSeeker = new JobSeeker("shayan", "moradi", "1234", "shayan@gmail.com");
+            jobSeeker.setId(1L);
+            jobSeekerAuthServiceImp.register(jobSeeker);
+            JobSeeker jobSeeker1 = jobSeekerRepositoryImp.getJobSeekers().get(0);
+            System.out.println(jobSeekerRepositoryImp.getJobSeekers());
 //        System.out.println(jobSeekerRepositoryImp.getJobSeekers().get(0));
-        System.out.println(jobSeeker1.getName());
-        System.out.println("res"+jobSeekerRepositoryImp.findById(1L));
-       // jobSeekerRepositoryImp.getJobSeekers().remove(jobSeeker1);
-      //  System.out.println(  jobSeekerRepositoryImp.getJobSeekers());
+            System.out.println(jobSeeker1.getName());
+            System.out.println("res" + jobSeekerRepositoryImp.findById(1L));
+            // jobSeekerRepositoryImp.getJobSeekers().remove(jobSeeker1);
+            //  System.out.println(  jobSeekerRepositoryImp.getJobSeekers());
+        }
+//employerBlock
+        {
+
+        }
+
+
 
 
 
